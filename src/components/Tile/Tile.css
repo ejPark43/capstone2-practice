@@ -1,0 +1,35 @@
+.tile {
+  /*체스판의 각 타일. 나중에 width, height 배경 도면 크기에 맞게 변경 필요*/
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-content: center; /* 타일 내부에 있는 것을 center로.*/
+}
+.tile .icon-piece {
+  /*아이콘 이미지를 background로 설정해서, 이미지 파일로 움직이지 못하도록 만듦*/
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+}
+.tile .icon-piece:hover {
+  cursor: grab;
+}
+
+.tile .icon-piece:active {
+  cursor: grabbing;
+}
+
+.black-tile {
+  /* background-color: rgba(90, 128, 95); */
+  background-color: rgb(68, 68, 68);
+}
+.white-tile {
+  /* background-color: rgb(237, 237, 216); */
+  background-color: rgb(214, 214, 214);
+}
+
+.tile img {
+  width: 50px;
+}
