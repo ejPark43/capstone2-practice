@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { JSX, useEffect, useRef, useState } from "react";
 import "./Chessboard.css";
-import Tile from "../Tile/Tile.tsx";
+import Tile from "./Tile/Tile.tsx";
 
 const verticalAxis = [1, 2, 3, 4, 5, 6, 7, 8];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -138,14 +138,16 @@ export default function Chessboard() {
   }
 
   return (
-    <div
-      onMouseMove={(e) => movePiece(e)}
-      onMouseDown={(e) => grabPiece(e)}
-      onMouseUp={(e) => dropPiece(e)}
-      id="chessboard"
-      ref={chessboardRef}
-    >
-      {board}
+    <div id="app">
+      <div
+        onMouseMove={(e) => movePiece(e)}
+        onMouseDown={(e) => grabPiece(e)}
+        onMouseUp={(e) => dropPiece(e)}
+        id="chessboard"
+        ref={chessboardRef}
+      >
+        {board}
+      </div>
     </div>
   );
 }
