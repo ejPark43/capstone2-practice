@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import icon from "./icons/light_bulb.png";
 import ButtonAppBar from "./components/ButtonAppBar.tsx";
+import NavBar from "./components/NavBar.tsx";
 function SlideSidePanel() {
+  const [sidebar, setSidebar] = useState(false);
   return (
     <SidePanelPage>
       <ButtonAppBar />
       <Container>
-        <Device></Device>
+        <Device onClick={() => setSidebar(true)} />
       </Container>
+      <NavBar sidebar={sidebar} setSidebar={setSidebar} />
     </SidePanelPage>
   );
 }
