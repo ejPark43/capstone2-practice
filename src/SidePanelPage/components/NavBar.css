@@ -8,14 +8,13 @@
   color: #1b76d2;
 }
 
-.nav-menu {
-  /* background-color: #060b26; */
+/* .nav-menu {
   background-color: #ffffff;
   width: 500px;
   border-radius: 20px;
-  /* border: 2px solid #1b76d2; */
+
   border: 1px solid #1b76d2;
-  /* margin-left: 20px; */
+
   display: flex;
   justify-content: center;
   position: fixed;
@@ -23,14 +22,14 @@
   margin: 20px;
   right: -100%;
   transition: 1000ms;
-  /* height: 100%; */
-}
 
-.nav-menu.active {
+} */
+
+/* .nav-menu.active {
   right: 0;
 
   transition: 400ms;
-}
+} */
 
 /* .nav-text :hover {
   background-color: #1b76d2;
