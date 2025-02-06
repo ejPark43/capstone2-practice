@@ -2,6 +2,7 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import Tile from "./Tile/Tile.tsx";
 import styled from "styled-components";
+import ButtonAppBar from "../../SidePanelPage/components/ButtonAppBar.tsx";
 
 const verticalAxis = [1, 2, 3, 4, 5, 6, 7, 8];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -19,11 +20,11 @@ interface Piece {
 const initialBoardState: Piece[] = [];
 
 for (let i = 0; i < cols; i++) {
-  initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 6 }); // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
+  // initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 6 }); // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
   initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 7 }); // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
 }
 for (let i = 0; i < cols; i++) {
-  initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 1 });
+  // initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 1 });
   initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 0 });
 } // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
 
@@ -138,17 +139,20 @@ export default function Chessboard() {
   }
 
   return (
-    <Container>
-      <ChessboardBase
-        onMouseMove={(e) => movePiece(e)}
-        onMouseDown={(e) => grabPiece(e)}
-        onMouseUp={(e) => dropPiece(e)}
-        // id="chessboard"
-        ref={chessboardRef}
-      >
-        {board}
-      </ChessboardBase>
-    </Container>
+    <>
+      {/* <ButtonAppBar /> */}
+      <Container>
+        <ChessboardBase
+          onMouseMove={(e) => movePiece(e)}
+          onMouseDown={(e) => grabPiece(e)}
+          onMouseUp={(e) => dropPiece(e)}
+          // id="chessboard"
+          ref={chessboardRef}
+        >
+          {board}
+        </ChessboardBase>
+      </Container>
+    </>
   );
 }
 

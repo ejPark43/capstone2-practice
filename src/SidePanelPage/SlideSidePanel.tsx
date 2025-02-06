@@ -26,11 +26,14 @@ const SidePanelPage = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  border: 2px solid green;
+  justify-content: center;
+  padding: 50px;
+  height: 100%;
+  /* border: 2px solid green; */
 `;
 const Device = styled.div`
   display: flex;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   border-radius: 50p;
   /* padding: 20px; */
   background-image: url(${icon});
