@@ -9,6 +9,9 @@ function Home() {
         <Btn className="btn" onClick={() => navigate("/Chessboard")}>
           Grid to Snap(체스보드)
         </Btn>
+        <Btn className="btn" onClick={() => navigate("/gridLevel")}>
+          Grid Level test
+        </Btn>
         <Btn className="btn" onClick={() => navigate("/slidePanel")}>
           Slide Panel
         </Btn>

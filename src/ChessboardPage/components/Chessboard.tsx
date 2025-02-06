@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { JSX, useEffect, useRef, useState } from "react";
-import "./Chessboard.css";
 import Tile from "./Tile/Tile.tsx";
+import styled from "styled-components";
 
 const verticalAxis = [1, 2, 3, 4, 5, 6, 7, 8];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -138,18 +138,41 @@ export default function Chessboard() {
   }
 
   return (
-    <div id="app">
-      <div
+    <Container>
+      <ChessboardBase
         onMouseMove={(e) => movePiece(e)}
         onMouseDown={(e) => grabPiece(e)}
         onMouseUp={(e) => dropPiece(e)}
-        id="chessboard"
+        // id="chessboard"
         ref={chessboardRef}
       >
         {board}
-      </div>
-    </div>
+      </ChessboardBase>
+    </Container>
   );
 }
 
 //  Chessboard;
+
+const ChessboardBase = styled.div`
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(8, 100px); /*8번 반복, 100픽셀씩 줌 */
+  grid-template-rows: repeat(8, 100px);
+
+  /* 800*800 체스판 배경*/
+  width: 800px;
+  height: 800px;
+
+  background-color: rgb(221, 221, 221);
+  /* background-color: rgb(255, 0, 0); */
+`;
+
+const Container = styled.div`
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(23, 23, 23);
+`;
