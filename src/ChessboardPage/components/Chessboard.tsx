@@ -1,6 +1,5 @@
 // import React from "react";
 import React, { JSX, useEffect, useRef, useState } from "react";
-import "./Chessboard.css";
 import Tile from "./Tile/Tile.tsx";
 import styled from "styled-components";
 
@@ -139,7 +138,7 @@ export default function Chessboard() {
   }
 
   return (
-    <div id="app">
+    <Container>
       <ChessboardBase
         onMouseMove={(e) => movePiece(e)}
         onMouseDown={(e) => grabPiece(e)}
@@ -149,7 +148,7 @@ export default function Chessboard() {
       >
         {board}
       </ChessboardBase>
-    </div>
+    </Container>
   );
 }
 
@@ -168,4 +167,12 @@ const ChessboardBase = styled.div`
 
   background-color: rgb(221, 221, 221);
   /* background-color: rgb(255, 0, 0); */
+`;
+
+const Container = styled.div`
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(23, 23, 23);
 `;
