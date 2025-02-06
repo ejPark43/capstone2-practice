@@ -2,6 +2,7 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import Tile from "./Tile/Tile.tsx";
 import styled from "styled-components";
+import ButtonAppBar from "../../SidePanelPage/components/ButtonAppBar.tsx";
 
 const verticalAxis = [1, 2, 3, 4, 5, 6, 7, 8];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -138,17 +139,20 @@ export default function Chessboard() {
   }
 
   return (
-    <Container>
-      <ChessboardBase
-        onMouseMove={(e) => movePiece(e)}
-        onMouseDown={(e) => grabPiece(e)}
-        onMouseUp={(e) => dropPiece(e)}
-        // id="chessboard"
-        ref={chessboardRef}
-      >
-        {board}
-      </ChessboardBase>
-    </Container>
+    <>
+      <ButtonAppBar />
+      <Container>
+        <ChessboardBase
+          onMouseMove={(e) => movePiece(e)}
+          onMouseDown={(e) => grabPiece(e)}
+          onMouseUp={(e) => dropPiece(e)}
+          // id="chessboard"
+          ref={chessboardRef}
+        >
+          {board}
+        </ChessboardBase>
+      </Container>
+    </>
   );
 }
 
