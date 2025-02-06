@@ -3,7 +3,6 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 // import { Link } from "react-router-dom";
 import { SidebarData, DeviceData } from "./SidebarData.tsx";
-import "./NavBar.css";
 import styled from "styled-components";
 
 interface NavBarProps {
@@ -16,33 +15,33 @@ function NavBar({ sidebar, setSidebar }: NavBarProps) {
   return (
     <Container>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className="nav-menu-items">
-          <li className="navbar-toggle">
-            <div className="menu-close" onClick={showSidebar}>
+        <ModalContainer>
+          <div className="navbar-toggle">
+            <CloseIcon onClick={showSidebar}>
               <AiIcons.AiOutlineClose />
-            </div>
-          </li>
+            </CloseIcon>
+          </div>
           {DeviceData.map((item, index) => {
             return (
-              <li key={index} className="nav-text">
-                <div className="info-container">
+              <ModalInfoContainer key={index}>
+                <ModalInfo>
                   <div className="info-container-text">
                     종류: {item.type} {/* {item.icon} */}
                   </div>
-                  <span className="info-container-text">
+                  <div className="info-container-text">
                     위치: {item.location}
-                  </span>
-                  <span className="info-container-text">
+                  </div>
+                  <div className="info-container-text">
                     작동상태: {item.state}
-                  </span>{" "}
-                  <span className="info-container-text">
+                  </div>
+                  <div className="info-container-text">
                     좌표: ({item.x},{item.y})
-                  </span>
-                </div>
-              </li>
+                  </div>
+                </ModalInfo>
+              </ModalInfoContainer>
             );
           })}
-        </ul>
+        </ModalContainer>
       </nav>
     </Container>
   );
@@ -75,4 +74,61 @@ const Container = styled.div`
     transition: 1000ms;
     /* height: 100%; */
   }
+`;
+
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & > .navbar-toggle {
+    border-radius: 20px;
+    background-color: #ffffff;
+
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+`;
+
+const CloseIcon = styled.div`
+  display: flex;
+  align-items: end;
+  margin-right: 2rem;
+  font-size: 2rem;
+  background: none;
+  cursor: pointer;
+  color: #1b76d2;
+`;
+
+const ModalInfo = styled.div`
+  display: flex;
+  text-decoration: none;
+  color: #1b76d2;
+  font-size: 18px;
+
+  display: flex;
+  /* align-items: center; */
+  padding: 0 16px;
+
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 2px solid gold;
+
+  & > .info-container-text {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+`;
+
+const ModalInfoContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
 `;
