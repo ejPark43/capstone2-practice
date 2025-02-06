@@ -20,11 +20,11 @@ interface Piece {
 const initialBoardState: Piece[] = [];
 
 for (let i = 0; i < cols; i++) {
-  initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 6 }); // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
+  // initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 6 }); // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
   initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 7 }); // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
 }
 for (let i = 0; i < cols; i++) {
-  initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 1 });
+  // initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 1 });
   initialBoardState.push({ image: "assets/icons/light_bulb.png", x: i, y: 0 });
 } // piece에 이미지와 x,y값 넣어줌. (x,y값은 타일 번호)
 
@@ -140,7 +140,7 @@ export default function Chessboard() {
 
   return (
     <>
-      <ButtonAppBar />
+      {/* <ButtonAppBar /> */}
       <Container>
         <ChessboardBase
           onMouseMove={(e) => movePiece(e)}

@@ -34,7 +34,7 @@ const TileContainer = styled.div<{ isBlack: boolean }>`
   border-right: 1px solid rgb(40, 84, 64);
   border-bottom: 1px solid rgb(40, 84, 64);
   background-color: ${(props) =>
-    props.isBlack ? "rgb(68, 68, 68)" : "rgb(237, 237, 216)"};
+    props.isBlack ? "rgb(195, 195, 195)" : "rgb(230, 230, 230)"};
 `;
 
 const IconPiece = styled.div<{ icon?: string }>`

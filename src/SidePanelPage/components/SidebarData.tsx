@@ -37,7 +37,9 @@ export const SidebarData = [
 
 export const DeviceData = [
   {
-    type: "light",
+    type: "RGB 소켓 전구",
+    name: "A형 면조명 (색온도변환)",
+    lighting: "3000k ~ 5700k",
     location: "3층 동쪽 소회의실",
     state: "ON",
     x: 132,

@@ -26,16 +26,25 @@ function NavBar({ sidebar, setSidebar }: NavBarProps) {
               <ModalInfoContainer key={index}>
                 <ModalInfo>
                   <div className="info-container-text">
-                    종류: {item.type} {/* {item.icon} */}
+                    <span>디바이스 종류: </span> {item.type} {/* {item.icon} */}
                   </div>
                   <div className="info-container-text">
-                    위치: {item.location}
+                    <span>디바이스 이름: </span>
+                    {item.name}
                   </div>
                   <div className="info-container-text">
-                    작동상태: {item.state}
+                    <span>조명 색온도: </span>
+                    {item.lighting}
                   </div>
                   <div className="info-container-text">
-                    좌표: ({item.x},{item.y})
+                    <span>디바이스 위치:</span> {item.location}
+                  </div>
+                  <div className="info-container-text">
+                    <span>현재 작동 상태: </span>
+                    {item.state}
+                  </div>
+                  <div className="info-container-text">
+                    <span>좌표: </span>({item.x},{item.y})
                   </div>
                 </ModalInfo>
               </ModalInfoContainer>
@@ -51,7 +60,7 @@ export default NavBar;
 
 const Container = styled.div`
   display: flex;
-
+  z-index: 1500;
   & > .nav-menu.active {
     right: 0;
 
@@ -116,14 +125,20 @@ const ModalInfo = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border: 2px solid gold;
+  /* border: 2px solid gold; */
 
   & > .info-container-text {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     padding: 8px;
+    & > span {
+      /* display: flex; */
+      font-size: larger;
+      font-weight: bolder;
+      margin-right: 10px;
+    }
   }
 `;
 
