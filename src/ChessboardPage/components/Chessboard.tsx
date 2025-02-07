@@ -15,7 +15,6 @@ interface Piece {
   x: number; // 해당 피스의 위치
   y: number;
 }
-// const pieces: Piece[] = []; // Piece라는 타입을 갖는 배열 pieces
 
 const initialBoardState: Piece[] = [];
 
